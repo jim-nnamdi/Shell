@@ -7,6 +7,8 @@ import (
 	"os"
 	"os/exec"
 	"strings"
+
+	"github.com/jim-nnamdi/go-unix/source"
 )
 
 func main() {
@@ -21,9 +23,13 @@ func main() {
 		if e = execInput(i); e != nil {
 			fmt.Fprintf(os.Stderr, "%s", e)
 		}
+
+		decoder := source.NewB64T()
+		decoder.DecodeB64(i)
 	}
 }
 
+// basic system commands
 func execInput(kinput string) error {
 	rmline := strings.TrimSuffix(kinput, "\n")
 	args := strings.Split(rmline, " ")

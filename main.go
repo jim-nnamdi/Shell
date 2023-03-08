@@ -9,16 +9,6 @@ import (
 	"strings"
 )
 
-// a shell is a basic user interface for
-// an operating system,it takes in an arbitary
-// amount of input and returns a corresponding
-// output.
-
-// bourne shell = sh
-// bourne again shell = bash
-// korn shell = ksh
-// etc ...
-
 func main() {
 	reader := bufio.NewReader(os.Stdin)
 	for {
